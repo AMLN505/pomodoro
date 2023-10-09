@@ -1,0 +1,9 @@
+.link {
+	display: flex;
+	align-items: center;
+}
+
+.text {
+	margin-left: 5px;
+	padding-top: 5px;
+}

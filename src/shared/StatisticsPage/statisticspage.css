@@ -1,0 +1,53 @@
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.select {
+	width: 370px;
+}
+
+.grid {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: 296px 83px 405px 405px;
+	grid-template-rows: 260px 179px 179px;
+	grid-template-areas:
+		'workTime chart chart chart'
+		'tomatoes chart chart chart'
+		'focus focus pause stops';
+}
+
+.workTime {
+	grid-area: workTime;
+	background-color: var(--grey-light);
+}
+
+.tomatoes {
+	grid-area: tomatoes;
+	background-color: var(--grey-light);
+}
+
+.chart {
+	grid-area: chart;
+	background-color: var(--grey-light);
+	padding-bottom: 11px;
+	padding-right: 20px;
+}
+
+.focus {
+	grid-area: focus;
+	background-color: var(--grey-light);
+}
+
+.pause {
+	grid-area: pause;
+	background-color: var(--grey-light);
+}
+
+.stops {
+	grid-area: stops;
+	background-color: var(--grey-light);
+}

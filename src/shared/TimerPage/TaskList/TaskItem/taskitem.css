@@ -1,0 +1,12 @@
+.taskItem {
+	padding: 15px 0;
+	border-bottom: 1px solid var(--colorE4E4E4);
+}
+
+.taskItem:first-child {
+	border-top: 1px solid var(--colorE4E4E4);
+}
+
+.taskItem:last-of-type {
+	margin-bottom: 19px;
+}

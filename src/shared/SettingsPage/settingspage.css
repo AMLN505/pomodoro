@@ -1,0 +1,11 @@
+.heading {
+	margin-bottom: 40px;
+}
+
+.grid {
+	display: grid;
+	gap: 30px;
+	grid-template-rows: 200px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 200px;
+}

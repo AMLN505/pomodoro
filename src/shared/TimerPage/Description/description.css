@@ -1,0 +1,13 @@
+.list {
+	list-style: inside;
+	margin-bottom: 25px;
+}
+
+.listItem {
+	color: var(--colorB7280F);
+	line-height: 33px;
+}
+
+.listItem span {
+	color: var(--text-color);
+}

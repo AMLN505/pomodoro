@@ -1,0 +1,15 @@
+.timer {
+	padding-top: 70px;
+	background-color: var(--grey-light);
+	display: flex;
+	justify-content: center;
+}
+
+.timerValue {
+	position: relative;
+	width: max-content;
+	font-weight: 200;
+	font-size: 150px;
+	line-height: 179px;
+}
+

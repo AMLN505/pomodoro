@@ -1,0 +1,19 @@
+.formContainer {
+	position: relative;
+	margin-right: auto;
+}
+
+.formContainer::before {
+	position: absolute;
+	z-index: -1;
+	content: '';
+	top: -5px;
+	bottom: -5px;
+	right: -5px;
+	left: -5px;
+	background-color: var(--grey-light);
+}
+
+.input {
+	background-color: var(--grey-light);
+}

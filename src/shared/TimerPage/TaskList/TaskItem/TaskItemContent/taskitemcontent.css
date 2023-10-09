@@ -1,0 +1,18 @@
+	.content {
+		display: flex;
+		align-items: center;
+	}
+
+	.tomatoes {
+		width: 25px;
+		height: 25px;
+		margin-right: 10px;
+		border-radius: 50%;
+		border: 1px solid var(--colorC4C4C4);
+		text-align: center;
+		line-height: 25px;
+	}
+
+	.taskName {
+		margin-right: auto;
+	}

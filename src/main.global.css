@@ -1,0 +1,179 @@
+@font-face {
+	font-family: 'SFUIDisplay';
+	font-display: swap;
+	src: local('SF UI Display Regular'), local('SF-UI-Display-Regular'), local('SFUIDisplay-Regular'), local('SFUIDisplay Regular'),
+			url('/src/assets/fonts/SFUIDisplay-Regular.woff2'),
+			url('/src/assets/fonts/SFUIDisplay-Regular.woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SFUIDisplay';
+	font-display: swap;
+	src: local('SF UI Display Light'), local('SF-UI-Display-Light'), local('SFUIDisplay-Light'), local('SFUIDisplay Light'),
+			url('/src/assets/fonts/SFUIDisplay-Light.woff2'),
+			url('/src/assets/fonts/SFUIDisplay-Light.woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SFUIDisplay';
+	font-display: swap;
+	src: local('SF UI Display Medium'), local('SF-UI-Display-Medium'), local('SFUIDisplay-Medium'), local('SFUIDisplay Medium'),
+			url('/src/assets/fonts/SFUIDisplay-Medium.woff2'),
+			url('/src/assets/fonts/SFUIDisplay-Medium.woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SFUIDisplay';
+	font-display: swap;
+	src: local('SF UI Display Bold'), local('SF-UI-Display-Bold'), local('SFUIDisplay-Bold'), local('SFUIDisplay Bold'),
+			url('/src/assets/fonts/SFUIDisplay-Bold.woff2'),
+			url('/src/assets/fonts/SFUIDisplay-Bold.woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SFUIDisplay';
+	font-display: swap;
+	src: local('SF UI Display Thin'), local('SF-UI-Display-Thin'), local('SFUIDisplay-Thin'), local('SFUIDisplay Thin'),
+			url('/src/assets/fonts/SFUIDisplay-Thin.woff2'),
+			url('/src/assets/fonts/SFUIDisplay-Thin.woff');
+	font-weight: 200;
+	font-style: normal;
+}
+
+:root {
+  --colorDC3E22: #DC3E22;
+	--colorB7280F: #B7280F;
+	--color333333: #333333;
+	--color999999: #999999;
+	--colorA8B64F: #A8B64F;
+	--color899441: #899441;
+	--colorC4C4C4: #C4C4C4;
+	--color404040: #404040;
+	--colorFFFFFF: #FFFFFF;
+	--colorEA8A79: #EA8A79;
+	--colorF4F4F4: #F4F4F4;
+	--color777777: #777777;
+	--colorE4E4E4: #E4E4E4;
+	--colorFFDDA9: #FFDDA9;
+	--colorDFDCFE: #DFDCFE;
+	--colorC5F1FF: #C5F1FF;
+}
+
+:root[data-dark-theme="false"]  {
+	--background-color: var(--colorFFFFFF);
+  --text-color: var(--color333333);
+	--grey-dark: var(--colorC4C4C4);
+	--grey-light: var(--colorF4F4F4);
+}
+
+:root[data-dark-theme="true"]  {
+	--background-color: var(--color333333);
+  --text-color: var(--colorFFFFFF);
+	--grey-dark: var(--color404040);
+	--grey-light: var(--color777777);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+	background-color: var(--background-color);
+	color: var(--text-color);
+  font-size: 16px;
+  font-family: 'SFUIDisplay', sans-serif;
+	font-weight: 400;
+	line-height: 17px;
+}
+
+* {
+  box-sizing: border-box;
+
+}
+
+ul {
+  list-style: none;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+	width: max-content;
+}
+
+h1, h2, p, ul, input, div, button, a, span {
+	margin: 0;
+	padding: 0;
+	font-family: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+
+h1, h2, p, ul, input, div, a, span {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+h1, h2 {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 33px;
+}
+
+input:focus, input {
+	border: none;
+	outline: none;
+}
+
+.disable-scroll {
+	overflow: hidden;
+}
+
+html,
+body {
+  scrollbar-gutter: stable;
+}
+
+.recharts-wrapper .recharts-cartesian-grid-horizontal line:first-child,
+.recharts-wrapper .recharts-cartesian-grid-horizontal line:last-child {
+  stroke-opacity: 0;
+}
+
+.recharts-wrapper .recharts-cartesian-grid-horizontal line {
+	stroke: var(--text-color);
+	opacity: 0.5;
+}
+
+.recharts-wrapper .recharts-yAxis .recharts-cartesian-axis-ticks .recharts-cartesian-axis-tick:first-child,
+.recharts-wrapper .recharts-yAxis .recharts-cartesian-axis-ticks .recharts-cartesian-axis-tick:last-child {
+  display: none;
+}
+
+.recharts-wrapper .recharts-yAxis .recharts-cartesian-axis-ticks .recharts-cartesian-axis-tick text,
+.recharts-wrapper .recharts-xAxis .recharts-cartesian-axis-ticks .recharts-cartesian-axis-tick text {
+	fill: var(--text-color);
+}
+
+.recharts-wrapper .recharts-xAxis .recharts-cartesian-axis-ticks .recharts-cartesian-axis-tick {
+	font-size: 24px;
+	line-height: 29px;
+}
+
+.recharts-wrapper .recharts-yAxis .recharts-cartesian-axis-ticks .recharts-cartesian-axis-tick {
+	font-size: 12px;
+	line-height: 33px;
+}
+
+

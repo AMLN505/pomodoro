@@ -1,0 +1,31 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 25px;
+}
+
+.input {
+	max-width: 370px;
+	margin-bottom: 25px;
+	font-weight: 300;
+	line-height: 17px;
+	padding: 19px 15px;
+	background-color: var(--grey-light);
+}
+
+.input::placeholder {
+	color: var(--color999999);
+}
+
+.button {
+	color: var(--colorFFFFFF);
+	background-color: var(--colorA8B64F);
+	font-weight: 500;
+	line-height: 17px;
+	padding: 19px 50px;
+	transition: background-color 0.3s;
+}
+
+.button:hover, .button:focus-visible {
+	background-color: var(--color899441);
+}

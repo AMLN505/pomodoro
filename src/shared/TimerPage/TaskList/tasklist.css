@@ -1,0 +1,9 @@
+.taskList {
+	width: 370px;
+	font-weight: 300;
+	line-height: 17px;
+}
+
+.totalTime {
+	color: var(--color999999);
+}

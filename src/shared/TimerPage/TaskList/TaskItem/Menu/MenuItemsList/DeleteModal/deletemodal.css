@@ -1,0 +1,59 @@
+.modalWrapper {
+	position: fixed;
+	display:flex;
+	width:100%;
+	height:100%;
+	justify-content:center;
+	align-items:center;
+	z-index:100;
+	top: 0;
+	left: 0;
+}
+
+.modal {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 200;
+	background: var(--background-color);
+	min-width: 350px;
+	min-height: 160px;
+	max-width: 80%;
+	padding: 25px;
+}
+
+.modalWrapper::before {
+	position:absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-color: var(--text-color);
+	opacity: 0.5;
+}
+
+.heading {
+	font-size: 24px;
+	margin-bottom: 25px;
+}
+
+.aproveButton {
+	margin-bottom: 10px;
+	color: var(--colorFFFFFF);
+	background-color: var(--colorDC3E22);
+	font-weight: 500;
+	line-height: 17px;
+	padding: 19px 50px;
+	transition: background-color 0.3s;
+}
+
+.cancelButton {
+	font-weight: 300;
+	text-decoration: underline;
+}
+
+.closeButton {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+}
