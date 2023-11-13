@@ -26,11 +26,14 @@ module.exports = {
 		extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
 	},
 	mode: NODE_ENV ? NODE_ENV : 'development',
-	entry: [
-		// eslint-disable-next-line no-undef
-		path.resolve(__dirname, '../src/client/index.jsx'),
-		'webpack-hot-middleware/client?path=http://localhost:3001/static/__webpack_hmr',
-	],
+	entry: IS_DEV
+		? [
+				// eslint-disable-next-line no-undef
+				path.resolve(__dirname, '../src/client/index.jsx'),
+				'webpack-hot-middleware/client?path=http://localhost:3001/static/__webpack_hmr',
+		  ]
+		: // eslint-disable-next-line no-undef
+		  [path.resolve(__dirname, '../src/client/index.jsx')],
 	output: {
 		// eslint-disable-next-line no-undef
 		path: path.resolve(__dirname, '../dist/client'),
@@ -82,6 +85,7 @@ module.exports = {
 		IS_DEV && new CleanWebpackPlugin(),
 		IS_PROD &&
 			new HtmlWebpackPlugin({
+				// eslint-disable-next-line no-undef
 				template: path.resolve(__dirname, '../src/client/index.html'),
 			}),
 		new webpack.DefinePlugin({
