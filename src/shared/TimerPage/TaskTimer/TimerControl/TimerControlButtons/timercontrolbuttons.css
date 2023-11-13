@@ -1,0 +1,34 @@
+.greenButton {
+	margin-right: 25px;
+	color: var(--colorFFFFFF);
+	background-color: var(--colorA8B64F);
+	font-weight: 500;
+	line-height: 17px;
+	padding: 19px 50px;
+	transition: background-color 0.3s;
+}
+
+.greenButton:hover, .greenButton:focus-visible {
+	background-color: var(--color899441);
+}
+
+.hollowButton {
+	color: var(--colorDC3E22);
+	background-color: transparent;
+	border: 2px solid var(--colorDC3E22);
+	font-weight: 500;
+	line-height: 17px;
+	padding: 19px 50px;
+	transition: background-color, 0.3s color, 0.3s;
+}
+
+.hollowButton:hover:not(:disabled), .hollowButton:focus-visible:not(:disabled) {
+	background-color: var(--colorDC3E22);
+	color: var(--colorFFFFFF);
+}
+
+.hollowButton:disabled {
+	cursor: auto;
+	color: var(--grey-dark);
+	border-color: var(--grey-dark);
+}

@@ -8,15 +8,7 @@ interface ITimerHead {
 }
 
 export function TimerHead({ name, progress }: ITimerHead) {
-	const {
-		isWork,
-		setIsWork,
-		isActive,
-		setIsActive,
-		isPaused,
-		setIsPaused,
-		setTime,
-	} = useContext(timerContext);
+	const { isWork, isActive, isPaused } = useContext(timerContext);
 
 	return (
 		<div

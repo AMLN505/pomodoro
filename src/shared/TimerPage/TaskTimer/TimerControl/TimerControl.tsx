@@ -11,6 +11,7 @@ import {
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 import { getWeekNumber } from '../../../../utils/js/getWeekNumber';
 import { getWeekDay } from '../../../../utils/js/getWeekDay';
+import { TimerControlButtons } from './TimerControlButtons';
 
 interface ITimerControl {
 	tasks: Array<ITask>;
@@ -110,70 +111,53 @@ export function TimerControl({ tasks, id }: ITimerControl) {
 			{isWork &&
 				!isActive &&
 				(isPaused ? (
-					<div className={styles.buttonsContainer}>
-						<button className={styles.greenButton} onClick={onResume}>
-							Продолжить
-						</button>
-						<button className={styles.hollowButton} onClick={onDone}>
-							Сделано
-						</button>
-					</div>
+					<TimerControlButtons
+						greenButtonOnClick={onResume}
+						greenButtonText="Продолжить"
+						hollowButtonOnClick={onDone}
+						hollowButtonText="Сделано"
+					/>
 				) : (
-					<div className={styles.buttonsContainer}>
-						<button
-							className={styles.greenButton}
-							onClick={() => setIsActive(true)}
-						>
-							Старт
-						</button>
-						<button className={styles.hollowButton} disabled>
-							Стоп
-						</button>
-					</div>
+					<TimerControlButtons
+						greenButtonOnClick={() => setIsActive(true)}
+						greenButtonText="Старт"
+						hollowButtonOnClick={() => {}}
+						hollowButtonText="Стоп"
+						hollowButtonDisabled={true}
+					/>
 				))}
 			{isWork && isActive && (
-				<div className={styles.buttonsContainer}>
-					<button className={styles.greenButton} onClick={onPause}>
-						Пауза
-					</button>
-					<button className={styles.hollowButton} onClick={onStop}>
-						Стоп
-					</button>
-				</div>
+				<TimerControlButtons
+					greenButtonOnClick={onPause}
+					greenButtonText="Пауза"
+					hollowButtonOnClick={onStop}
+					hollowButtonText="Стоп"
+				/>
 			)}
 			{!isWork &&
 				!isActive &&
 				(isPaused ? (
-					<div className={styles.buttonsContainer}>
-						<button className={styles.greenButton} onClick={onResume}>
-							Продолжить
-						</button>
-						<button className={styles.hollowButton} onClick={onSkip}>
-							Пропустить
-						</button>
-					</div>
+					<TimerControlButtons
+						greenButtonOnClick={onResume}
+						greenButtonText="Продолжить"
+						hollowButtonOnClick={onSkip}
+						hollowButtonText="Пропустить"
+					/>
 				) : (
-					<div className={styles.buttonsContainer}>
-						<button
-							className={styles.greenButton}
-							onClick={() => setIsActive(true)}
-						>
-							Старт
-						</button>
-						<button className={styles.hollowButton} onClick={onSkip}>
-							Пропустить
-						</button>
-					</div>
+					<TimerControlButtons
+						greenButtonOnClick={() => setIsActive(true)}
+						greenButtonText="Старт"
+						hollowButtonOnClick={onSkip}
+						hollowButtonText="Пропустить"
+					/>
 				))}
 			{!isWork && isActive && (
-				<div className={styles.buttonsContainer}>
-					<button className={styles.greenButton} onClick={onPause}>
-						Пауза
-					</button>
-					<button className={styles.hollowButton} onClick={onSkip}>
-						Пропустить
-					</button>
-				</div>
+				<TimerControlButtons
+					greenButtonOnClick={onPause}
+					greenButtonText="Пауза"
+					hollowButtonOnClick={onSkip}
+					hollowButtonText="Пропустить"
+				/>
 			)}
 		</div>
 	);

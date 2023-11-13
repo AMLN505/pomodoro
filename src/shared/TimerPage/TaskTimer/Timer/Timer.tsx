@@ -4,15 +4,13 @@ import { timerContext } from '../../../context/timerContext';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 import {
 	EType,
-	IStatistics,
 	ITask,
-	addStats,
 	updateBreakCounter,
 	updateTask,
 } from '../../../../store/reducers/toolkitSlice';
-import { getWeekNumber } from '../../../../utils/js/getWeekNumber';
-import { getWeekDay } from '../../../../utils/js/getWeekDay';
 import { AddTimeButton } from './AddTimeButton';
+import { showNotification } from '../../../../utils/js/showNotification';
+import { addStatsItem } from '../../../../utils/js/addStatsItem';
 
 interface ITimer {
 	tasks: Array<ITask>;
@@ -23,18 +21,6 @@ interface ITimer {
 
 export function Timer({ id, tasks, progress, tomatoes }: ITimer) {
 	const dispatch = useAppDispatch();
-
-	function addStatsItem(type: EType, value: number) {
-		const date = new Date();
-		const statItem: IStatistics = {
-			week: getWeekNumber(date),
-			day: getWeekDay(date),
-			type: type,
-			value: value,
-		};
-
-		dispatch(addStats(statItem));
-	}
 
 	const {
 		breakTime,
@@ -48,19 +34,6 @@ export function Timer({ id, tasks, progress, tomatoes }: ITimer) {
 	const { isWork, setIsWork, isActive, setIsActive, time, setTime } =
 		useContext(timerContext);
 
-	function showNotification(body: string) {
-		if (notify) {
-			const not = new Notification('Pomodoro_box', {
-				body: body,
-				icon: 'https://img.freepik.com/free-vector/fresh-tomato_1053-566.jpg?w=2000',
-			});
-			const sound = new Audio(
-				'https://btones.b-cdn.net/fetch/59/5980d6d84fdde2c38b7d87250384d4e8.mp3'
-			);
-			sound.play();
-		}
-	}
-
 	function tick() {
 		if (!isActive) {
 			return;
@@ -69,7 +42,7 @@ export function Timer({ id, tasks, progress, tomatoes }: ITimer) {
 		if (time[0] === 0 && time[1] === 0) {
 			setIsActive(false);
 			if (isWork) {
-				showNotification('Пора отдыхать!');
+				notify && showNotification('Пора отдыхать!');
 
 				addStatsItem(EType.tomatoes, 1);
 
@@ -82,12 +55,12 @@ export function Timer({ id, tasks, progress, tomatoes }: ITimer) {
 
 				setIsWork(false);
 				dispatch(updateBreakCounter(breakCounter + 1));
-				(breakCounter + 1) % breaksFreq == 0 &&
+				(breakCounter + 1) % breaksFreq === 0 &&
 				breakCounter + 1 > breaksFreq - 1
 					? setTime([longBreakTime, 0])
 					: setTime([breakTime, 0]);
 			} else {
-				showNotification('Пора работать!');
+				notify && showNotification('Пора работать!');
 				setIsWork(true);
 				setTime([workTime, 0]);
 				const newTasks = tasks.map((task) =>
@@ -95,7 +68,7 @@ export function Timer({ id, tasks, progress, tomatoes }: ITimer) {
 				);
 				dispatch(updateTask(newTasks));
 			}
-		} else if (time[1] == 0) {
+		} else if (time[1] === 0) {
 			setTime([time[0] - 1, 59]);
 		} else {
 			setTime([time[0], time[1] - 1]);

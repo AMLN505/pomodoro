@@ -29,7 +29,7 @@ module.exports = {
 	entry: [
 		// eslint-disable-next-line no-undef
 		path.resolve(__dirname, '../src/client/index.jsx'),
-		'webpack-hot-middleware/client?path=http://localhost:3001/__webpack_hmr',
+		'webpack-hot-middleware/client?path=http://localhost:3001/static/__webpack_hmr',
 	],
 	output: {
 		// eslint-disable-next-line no-undef
@@ -80,7 +80,10 @@ module.exports = {
 		IS_DEV && new ReactRefreshWebpackPlugin(),
 		IS_DEV && new webpack.HotModuleReplacementPlugin(),
 		IS_DEV && new CleanWebpackPlugin(),
-		IS_PROD && new HtmlWebpackPlugin({ template: path.resolve(__dirname, '../src/client/index.html') }),
+		IS_PROD &&
+			new HtmlWebpackPlugin({
+				template: path.resolve(__dirname, '../src/client/index.html'),
+			}),
 		new webpack.DefinePlugin({
 			// eslint-disable-next-line no-undef
 			'process.env.CLIENT_ID': `'${process.env.CLIENT_ID}'`,
