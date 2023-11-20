@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
 import {
 	EType,
 	ITask,
+	addStats,
 	updateBreakCounter,
 	updateTask,
 } from '../../../../store/reducers/toolkitSlice';
@@ -43,8 +44,7 @@ export function Timer({ id, tasks, progress, tomatoes }: ITimer) {
 			setIsActive(false);
 			if (isWork) {
 				notify && showNotification('Пора отдыхать!');
-
-				addStatsItem(EType.tomatoes, 1);
+				dispatch(addStats(addStatsItem(EType.tomatoes, 1)));
 
 				if (progress + 1 === tomatoes) {
 					const newTasks = tasks.filter(

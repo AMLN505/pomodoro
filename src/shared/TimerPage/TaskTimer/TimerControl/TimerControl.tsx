@@ -3,15 +3,13 @@ import styles from './timercontrol.css';
 import { timerContext } from '../../../context/timerContext';
 import {
 	EType,
-	IStatistics,
 	ITask,
 	addStats,
 	updateTask,
 } from '../../../../store/reducers/toolkitSlice';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
-import { getWeekNumber } from '../../../../utils/js/getWeekNumber';
-import { getWeekDay } from '../../../../utils/js/getWeekDay';
 import { TimerControlButtons } from './TimerControlButtons';
+import { addStatsItem } from '../../../../utils/js/addStatsItem';
 
 interface ITimerControl {
 	tasks: Array<ITask>;
@@ -47,22 +45,10 @@ export function TimerControl({ tasks, id }: ITimerControl) {
 		setIsActive(true);
 	}
 
-	function addStatsItem(type: EType, value: number) {
-		const date = new Date();
-		const statItem: IStatistics = {
-			week: getWeekNumber(date),
-			day: getWeekDay(date),
-			type: type,
-			value: value,
-		};
-
-		dispatch(addStats(statItem));
-	}
-
 	function onStop() {
 		setTime([workTime, 0]);
 		setIsActive(false);
-		addStatsItem(EType.stops, 1);
+		dispatch(addStats(addStatsItem(EType.stops, 1)));
 	}
 
 	function onSkip() {
@@ -86,7 +72,7 @@ export function TimerControl({ tasks, id }: ITimerControl) {
 		}, 1000);
 		return () => {
 			if (workTimeCounter !== 0) {
-				addStatsItem(EType.workTime, workTimeCounter);
+				dispatch(addStats(addStatsItem(EType.workTime, workTimeCounter)));
 			}
 			clearInterval(timer);
 		};
@@ -100,7 +86,7 @@ export function TimerControl({ tasks, id }: ITimerControl) {
 		}, 1000);
 		return () => {
 			if (pauseTimeCounter !== 0) {
-				addStatsItem(EType.pauseTime, pauseTimeCounter);
+				dispatch(addStats(addStatsItem(EType.pauseTime, pauseTimeCounter)));
 			}
 			clearInterval(timer);
 		};
