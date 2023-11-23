@@ -1,29 +1,16 @@
 # Pomodoro App
-<p align="center">
-      <img src="https://www.freepik.com/free-vector/deadline-concept-illustration_13850248.htm#query=time&position=43&from_view=search&track=sph&uuid=d362a852-9081-4d46-8959-c88d75bc6470" width="726">
-</p>
-
-<p align="center">
-   <img src="" alt="Unity Version">
-   <img src="" alt="Game Version">
-   <img src="" alt="License">
-</p>
-
 ## About
+Приложение для контроля времени работы и отдыха по технике Помодоро с гибкими настройками таймера, а также хранением статистики и ее визаулизации.
+## Languages and Tools
+<div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TS" alt="TS" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original-wordmark.svg" title="HTML" alt="HTML" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original-wordmark.svg" title="CSS" alt="CSS" width="40" height="40"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original-wordmark.svg" title="Webpack" **alt="Webpack" width="40" height="40"/>&nbsp;
+	<img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original-wordmark.svg" title="Eslint" **alt="Eslint" width="40" height="40"/>&nbsp;
+	<img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original-wordmark.svg" title="Eslint" **alt="Eslint" width="40" height="40"/>&nbsp;
+	<img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" title="Eslint" **alt="Eslint" width="40" height="40"/>&nbsp;
+</div>
 
-About Text Here
-
-## Documentation
-
-Documentation Here
-
-## Distribute
-
-- [Service Name](Page Link)
-
-
-## Developers
-
-- [Delevoper Name](GitHub Profile Link)
-
-## License
