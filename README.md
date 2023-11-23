@@ -1,5 +1,6 @@
+# Pomodoro App
 <p align="center">
-      <img src="Project Logo Url" width="726">
+      <img src="https://ru.pngtree.com/freepng/pomodoro-system-glyph-icon-vector_7827211.html" width="726">
 </p>
 
 <p align="center">
