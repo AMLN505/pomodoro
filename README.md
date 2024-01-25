@@ -21,7 +21,7 @@ Frontend-разработчик
 ### BUILD-версия
 *Ввести в терминал команду "npm build:prod"
 
-## [Ссылка на сайт](https://amln505.github.io/pomodoro/timer)
+## [Ссылка на сайт](https://amln505.github.io/pomodoro/)
 
 ## [Ссылка на макет](https://www.figma.com/file/4gQfoY8SSFlhh8E8zWvkup/Pomodoro?type=design&mode=design&t=DowAXg7fWOgPM1SI-0)
 
