@@ -25,7 +25,7 @@ Frontend-разработчик
 
 ## [Ссылка на макет](https://www.figma.com/file/4gQfoY8SSFlhh8E8zWvkup/Pomodoro?type=design&mode=design&t=DowAXg7fWOgPM1SI-0)
 
-## Languages and Tools
+## Технологии
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TS" alt="TS" width="40" height="40"/>&nbsp;
