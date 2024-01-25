@@ -17,11 +17,11 @@ Frontend-разработчик
 2. Открыть проект в IDE
 3. Установить пакеты с помощью команды в терминале "npm i"
 ### DEV-версия
-*Ввести в терминал компанду "npm dev"
+*Ввести в терминал команду "npm dev"
 ### BUILD-версия
-*Ввести в терминал компанду "npm build:prod"
+*Ввести в терминал команду "npm build:prod"
 
-## [Ссылка на сайт](amln505.github.io/pomodoro/)
+## [Ссылка на сайт](https://amln505.github.io/pomodoro/timer)
 
 ## [Ссылка на макет](https://www.figma.com/file/4gQfoY8SSFlhh8E8zWvkup/Pomodoro?type=design&mode=design&t=DowAXg7fWOgPM1SI-0)
 
